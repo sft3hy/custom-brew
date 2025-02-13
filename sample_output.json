@@ -1,0 +1,97 @@
+{
+    "status": "ok",
+    "totalResults": 6665,
+    "articles": [
+        {
+            "source": {
+                "id": "wired",
+                "name": "Wired"
+            },
+            "author": "Joel Khalili",
+            "title": "The First Bitcoin President? Tracing Trump’s Crypto Connections",
+            "description": "Crypto execs funneled millions in donations to swing this election, and now their man is in charge. Here’s how Donald Trump’s “crypto cabinet” could shape the next four years.",
+            "url": "https://www.wired.com/story/mapping-donald-trump-crypto-connections/",
+            "urlToImage": "https://media.wired.com/photos/67815aa7ced74e457dc3a71e/191:100/w_1280,c_limit/011025_Trumps-Crypto-Cabinet.jpg",
+            "publishedAt": "2025-01-16T11:00:00Z",
+            "content": "President Trump has surrounded himself with crypto enthusiasts. Thats no coincidence. In 2024 the cryptocurrency industry spent millions backing friendly congressional candidates, many of whom were R… [+817 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Gizmodo.com"
+            },
+            "author": "AJ Dellinger",
+            "title": "MicroStrategy Says Drop the Micro, It’s Cleaner",
+            "description": "The tech company turned Bitcoin repository is changing its name.",
+            "url": "https://gizmodo.com/microstrategy-says-drop-the-micro-its-cleaner-2000559905",
+            "urlToImage": "https://gizmodo.com/app/uploads/2025/02/GettyImages-2039371693.jpg",
+            "publishedAt": "2025-02-06T13:45:12Z",
+            "content": "Michael Saylor is apparently done thinking small. The founder and CEO of MicroStrategy announced Wednesday that his company would be dropping the “Micro” from its name, instead operating as Strategy.… [+2833 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Gizmodo.com"
+            },
+            "author": "Todd Feathers",
+            "title": "Policy Proposal for Trump’s Bitcoin Stockpile Leaks",
+            "description": "The main argument seems to be \"China.\"",
+            "url": "https://gizmodo.com/policy-proposal-for-trumps-bitcoin-stockpile-leaks-2000551372",
+            "urlToImage": "https://gizmodo.com/app/uploads/2024/10/sec-bitcoin-hack-arrest.jpg",
+            "publishedAt": "2025-01-16T21:05:53Z",
+            "content": "The cryptocurrency industry is lobbying President-Elect Donald Trump and incoming administration officials to buy billions of dollars worth of bitcoin for a national crypto stockpile, according to re… [+2619 chars]"
+        },
+        {
+            "source": {
+                "id": "wired",
+                "name": "Wired"
+            },
+            "author": "Jon Brodkin, Ars Technica",
+            "title": "Judge Ends One Man's 11-Year Quest to Recover $765 Million in Bitcoin by Digging Up a Landfill",
+            "description": "A UK judge ruled against James Howells, who has been trying to get a hard drive with private keys to a cryptocurrency fortune out of a landfill for over a decade.",
+            "url": "https://www.wired.com/story/bitcoin-landfill-excavation-james-howells-judge-ruling/",
+            "urlToImage": "https://media.wired.com/photos/67856ba0607aba6f3b093b82/191:100/w_1280,c_limit/ARS-Crypto-Landfill-Business-1386293068.jpg",
+            "publishedAt": "2025-01-13T20:25:06Z",
+            "content": "A British judge ruled against a man who wants to excavate a landfill where he says a hard drive with access to thousands of bitcoins was mistakenly dumped over 11 years ago.\r\nSince 2013, James Howell… [+3646 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "BBC News"
+            },
+            "author": null,
+            "title": "Man wants to buy tip where he lost Bitcoin fortune",
+            "description": "James Howells wants to search a landfill site where he lost for 8,000 bitcoins now worth about £620m.",
+            "url": "https://www.bbc.com/news/articles/cj3eg3n11gvo",
+            "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/4308/live/91110310-e717-11ef-a319-fb4e7360c4ec.jpg",
+            "publishedAt": "2025-02-09T21:58:13Z",
+            "content": "James Howells tried to sue Newport council to gain access to the landfill site\r\nThe authority is planning to close the tip in the 2025-26 financial year.\r\nIt has planning permission for a solar farm … [+1458 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Gizmodo.com"
+            },
+            "author": "AJ Dellinger",
+            "title": "Man in Search of Lost Bitcoin Fortune Wants to Buy the Landfill Where He Swears Its Buried",
+            "description": "James Howells has been chasing his lost hard drive for more than a decade now.",
+            "url": "https://gizmodo.com/man-in-search-of-lost-bitcoin-fortune-wants-to-buy-the-landfill-where-he-swears-its-buried-2000561920",
+            "urlToImage": "https://gizmodo.com/app/uploads/2024/09/An-image-of-Bitcoin-cryptocurrency.jpg",
+            "publishedAt": "2025-02-11T14:15:04Z",
+            "content": "If you believed that you knew where a hard drive containing more than $700 million in Bitcoin was located, how far would you go to get your hands on it? James Howells, a British IT worker who mined h… [+3319 chars]"
+        },
+        {
+            "source": {
+                "id": "the-verge",
+                "name": "The Verge"
+            },
+            "author": "Sarah Jeong",
+            "title": "Trump pardons Silk Road operator Ross Ulbricht",
+            "description": "Pardoning Ulbricht, who was serving a life sentence, fulfills a campaign promise made to crypto diehards who backed Donald Trump’s campaign.",
+            "url": "https://www.theverge.com/2025/1/21/24349080/trump-pardon-silk-road-dark-web-drug-marketplace-ross-ulbricht",
+            "urlToImage": "https://cdn.vox-cdn.com/thumbor/W_lGO8eNlUcEjBmUJg7KMYgT8-c=/0x0:2040x1360/1200x628/filters:focal(1081x561:1082x562)/cdn.vox-cdn.com/uploads/chorus_asset/file/25531809/STK175_DONALD_TRUMP_CVIRGINIA_C.jpg",
+            "publishedAt": "2025-01-22T01:17:14Z",
+            "content": "Trump pardons Silk Road operator Ross Ulbricht\r\nTrump pardons Silk Road operator Ross Ulbricht\r\n / The pardon fulfills a campaign promise made to the presidents crypto diehards.\r\nBySarah Jeong, featu… [+1805 chars]"
+        }
+    ]
+}
