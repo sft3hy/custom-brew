@@ -6,19 +6,16 @@ import os
 # Define email sender and receiver
 email_sender = 'smaueltown@gmail.com'
 email_password = os.environ['EMAIL_PASSWORD']
-email_receiver = 'smaueltown@gmail.com'
 
-def email_sam(subject: str, body: str):
-
-    # Set the subject and body of the email
-    subject = subject
-    body = body
-
+def send_email(subject: str, body: str, email_recipient: str):
+    # Create email message
     em = EmailMessage()
     em['From'] = email_sender
-    em['To'] = email_receiver
+    em['To'] = email_recipient
     em['Subject'] = subject
-    em.set_content(body)
+
+    # Set email content as HTML
+    em.add_alternative(body, subtype='html')
 
     # Add SSL (layer of security)
     context = ssl.create_default_context()
@@ -26,5 +23,5 @@ def email_sam(subject: str, body: str):
     # Log in and send the email
     with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
         smtp.login(email_sender, email_password)
-        smtp.sendmail(email_sender, email_receiver, em.as_string())
-        print(f'sent email to {email_receiver}')
+        smtp.sendmail(email_sender, email_recipient, em.as_string())
+        print(f'Sent email to {email_recipient}')

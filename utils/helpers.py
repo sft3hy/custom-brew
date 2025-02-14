@@ -1,4 +1,5 @@
 import regex as re
+import subprocess
 
 def validate_email(email):
     """
