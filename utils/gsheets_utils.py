@@ -2,7 +2,7 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import os
 import json
-private_key = os.getenv("GOOGLE_SHEETS_PRIVATE_KEY")
+private_key = os.getenv("GOOGLE_SHEETS_PRIVATE_KEY").replace('\\n', '\n')
 private_key_id = os.getenv("GOOGLE_SHEETS_PRIVATE_KEY_ID")
 client_id = os.getenv("GOOGLE_SHEETS_CLIENT_ID")
 # Define the scope of the API access
@@ -23,12 +23,12 @@ cred = {
 }
 creds = ServiceAccountCredentials.from_json_keyfile_dict(cred, scope)
 
-def update_sheet(email: str, frequency: str, topic: str):
+def update_sheet(email: str, topic: str):# frequency: str):
     client = gspread.authorize(creds)
     sheet = client.open("Custom_brew_users").sheet1
     # Add a new row to the sheet
-    row = [email, frequency, topic]  # Data to insert
+    row = [email, "Daily", topic]  # Data to insert
     sheet.append_row(row)
     print(f"Row added successfully!: {row}")
 
-# update_sheet("email@email.com", "Weekly", "News")
+# update_sheet("email@email.com", "News")

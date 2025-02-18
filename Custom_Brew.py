@@ -10,7 +10,7 @@ st.write("Welcome to the custom brew! This project compiles news articles tailor
 
 user_email = st.text_input('Email', placeholder='Enter your email address')
 topics = st.radio("Choose a topic", options=["Business", "Entertainment", "General", "Health", "Science", "Sports", "Technology"])
-frequency = st.radio('Email Frequency', options=['Daily', 'Weekly'], index=0)
+# frequency = st.radio('Email Frequency', options=['Daily', 'Weekly'], index=0)
 submit = st.button('Sign me up', type='primary')
 valid_email = True
 
@@ -19,13 +19,13 @@ if user_email:
 else:
     valid_email = False
 
-if user_email and topics and submit and valid_email and frequency:
+if user_email and topics and submit and valid_email:# and frequency:
     # update the user spreadsheet
-    st.success(f"Your custom brew has been created! You will receive a {frequency} email at {user_email} about {topics}.")
-    update_sheet(email=user_email, frequency=frequency, topic=topics)
+    with st.spinner("Adding you to our database..."):
+        update_sheet(email=user_email, topic=topics)#  frequency=frequency)
+    st.success(f"Welcome to the newsletter! Check your inbox daily at 9am EST for your {topics} Custom Brew ☕")
     welcome_email = open("static/welcome_email.html", "r").read()
     send_email(email_recipient=user_email, body=welcome_email, subject="Welcome to the Custom Brew ☕")
-    # add_email_job(frequency=frequency, email=user_email, topics=topics)
 
 
 elif submit and not user_email:
