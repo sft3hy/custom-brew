@@ -1,18 +1,7 @@
 import streamlit as st
 from utils.helpers import validate_email
-from scheduler import add_email_job
-import subprocess
-
-def start_scheduler():
-    try:
-        subprocess.Popen(["python", "scheduler.py"])
-        st.session_state["scheduler_started"] = True
-        print("Scheduler started.")
-    except Exception as e:
-        print(f"Error starting scheduler: {e}")
-# Call the function when the app starts
-if "scheduler_started" not in st.session_state:
-    start_scheduler()
+from utils.email_utils import send_email
+from utils.gsheets_utils import update_sheet
 
 st.set_page_config(page_title="Custom Brew", layout="centered", page_icon=":material/newspaper:")
 
@@ -21,8 +10,8 @@ st.write("Welcome to the custom brew! This project compiles news articles tailor
 
 user_email = st.text_input('Email', placeholder='Enter your email address')
 topics = st.radio("Choose a topic", options=["Business", "Entertainment", "General", "Health", "Science", "Sports", "Technology"])
-frequency = st.radio('Email Frequency', options=['Daily', 'Weekly'], index=1)
-submit = st.button('Create my brew', type='primary')
+frequency = st.radio('Email Frequency', options=['Daily', 'Weekly'], index=0)
+submit = st.button('Sign me up', type='primary')
 valid_email = True
 
 if user_email:
@@ -31,9 +20,12 @@ else:
     valid_email = False
 
 if user_email and topics and submit and valid_email and frequency:
-    # Process the input and send the newsletter
-    add_email_job(frequency=frequency, email=user_email, topics=topics)
+    # update the user spreadsheet
     st.success(f"Your custom brew has been created! You will receive a {frequency} email at {user_email} about {topics}.")
+    update_sheet(email=user_email, frequency=frequency, topic=topics)
+    welcome_email = open("static/welcome_email.html", "r").read()
+    send_email(email_recipient=user_email, body=welcome_email, subject="Welcome to the Custom Brew ☕")
+    # add_email_job(frequency=frequency, email=user_email, topics=topics)
 
 
 elif submit and not user_email:

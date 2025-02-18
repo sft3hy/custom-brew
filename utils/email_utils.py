@@ -4,13 +4,13 @@ from email.message import EmailMessage
 import os
 
 # Define email sender and receiver
-email_sender = 'smaueltown@gmail.com'
-email_password = os.environ['EMAIL_PASSWORD']
+email_sender = 'custombrew1@gmail.com'
+email_password = os.environ['CUSTOM_BREW_EMAIL_PASSWORD']
 
 def send_email(subject: str, body: str, email_recipient: str):
     # Create email message
     em = EmailMessage()
-    em['From'] = email_sender
+    em['From'] = "Custom Brew"
     em['To'] = email_recipient
     em['Subject'] = subject
 
@@ -25,3 +25,5 @@ def send_email(subject: str, body: str, email_recipient: str):
         smtp.login(email_sender, email_password)
         smtp.sendmail(email_sender, email_recipient, em.as_string())
         print(f'Sent email to {email_recipient}')
+
+# send_email("poo", "poooo", "smaueltown@gmail.com")
