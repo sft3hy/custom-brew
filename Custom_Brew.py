@@ -2,6 +2,7 @@ import streamlit as st
 from utils.helpers import validate_email
 from utils.email_utils import send_email
 from utils.gsheets_utils import update_sheet
+from static.welcome_email import customize_welcome
 
 st.set_page_config(page_title="Custom Brew", layout="centered", page_icon=":material/newspaper:")
 
@@ -20,11 +21,12 @@ else:
     valid_email = False
 
 if user_email and topics and submit and valid_email:# and frequency:
+    lowercase_topic = topics.lower()
     # update the user spreadsheet
     with st.spinner("Adding you to our database..."):
         update_sheet(email=user_email, topic=topics)#  frequency=frequency)
-    st.success(f"Welcome to the newsletter! Check your inbox daily at 9am EST for your {topics} Custom Brew ☕")
-    welcome_email = open("static/welcome_email.html", "r").read()
+    st.success(f"Welcome to the newsletter! Check your inbox daily at 9am EST for your {lowercase_topic} Custom Brew ☕")
+    welcome_email = customize_welcome(lowercase_topic)
     send_email(email_recipient=user_email, body=welcome_email, subject="Welcome to the Custom Brew ☕")
 
 
