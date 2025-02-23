@@ -22,13 +22,31 @@ cred = {
   "universe_domain": "googleapis.com"
 }
 creds = ServiceAccountCredentials.from_json_keyfile_dict(cred, scope)
+client = gspread.authorize(creds)
 
 def update_sheet(email: str, topic: str):# frequency: str):
-    client = gspread.authorize(creds)
     sheet = client.open("Custom_brew_users").sheet1
     # Add a new row to the sheet
     row = [email, "Daily", topic]  # Data to insert
     sheet.append_row(row)
     print(f"Row added successfully!: {row}")
 
-# update_sheet("email@email.com", "News")
+def get_all_user_data():
+    sheet = client.open("Custom_brew_users").sheet1
+    # Get all data from the sheet
+    all_rows = sheet.get_all_values()  # List of lists, including header
+    data_without_header = [dict(zip(all_rows[0], row)) for row in all_rows[1:]]  # Skip first row and convert to dicts
+    return data_without_header
+
+def delete_row(email: str, topic: str):# frequency: str):
+    sheet = client.open("Custom_brew_users").sheet1
+    all_users = get_all_user_data()
+    count = 1
+    for row in all_users:
+        count += 1
+        if row['Email'] == email and row['Topic'] == topic:
+            sheet.delete_rows(count)
+            print(f"Deleted {email}, {topic} from spreadsheet successfully")
+            break
+
+# delete_row(email="smaueltown@gmail.com", topic="asdf")
