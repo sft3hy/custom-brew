@@ -22,3 +22,15 @@ def validate_email(email):
     else:
         return False
     
+def pretty_list(items):
+    # Return an empty string if the list is empty
+    if not items:
+        return ""
+    # If there's only one item, return it directly
+    if len(items) == 1:
+        return items[0]
+    # If there are exactly two items, join them with ' and '
+    if len(items) == 2:
+        return ' and '.join(items)
+    # For three or more items, join all but the last with commas, then add ', and ' before the last item
+    return ', '.join(items[:-1]) + ', and ' + items[-1]
