@@ -1,4 +1,6 @@
 import streamlit as st
+st.set_page_config(page_title="About", page_icon=":material/waving_hand:")
+st.title("Welcome to Custom Brew")
 st.markdown("""
 Custom Brew is a personalized newsletter that delivers curated content tailored to your interests and preferences.
 ## Key Features
